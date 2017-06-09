@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 与 对应的 映射接口 的 全类名 必须保持一致 -->
+<mapper namespace="com.yc.sy.mapper.UserMapper">
+
+	<select id="findUser" parameterType="String" resultType="int">
+		select * from user where uname=#{uname} and upwd=#{upwd}
+	</select>
+	
+	<select id="selectUser" resultType="User">
+			select * from user
+	</select>
+	
+	<update id="updateUser" parameterType="User">
+			update user set upwd = #{upwd} where usid = #{usid}
+	</update>
+
+	<select id="telLogin" parameterType="String" resultType="User">
+		select * from user where utel=#{utel} 
+	</select>
+	<select id="checkTel" parameterType="String" resultType="User">
+		select * from user where utel=#{utel} 
+	</select>
+	
+	<update id="mdTel" parameterType="String">
+			update user set utel = #{utel} 
+	</update>
+</mapper>

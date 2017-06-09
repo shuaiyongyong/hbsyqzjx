@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background:url(../images/75.jpg)  repeat scroll ;
+}
+input{
+	width: 280px;
+	margin-top: 10px;
+}
+#loginForm{
+	width: 80%;
+	margin: 20px auto;
+}
+
+
+.loginForm1{
+	display: block;
+}
+.loginForm2{
+	display: none;
+}
+
+#loginBtn{
+	width: 100px;
+	float: left;
+}
+#error{
+	font-size:18px;
+	color: red;
+}
+#rem{
+	float: right;
+}
+
+a{
+	text-decoration: none;
+	list-style-type: none;
+	margin-top: 17px;
+}
+p{
+	margin-top: 20px;
+}

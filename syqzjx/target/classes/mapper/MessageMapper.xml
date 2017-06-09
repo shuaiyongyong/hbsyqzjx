@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 与 对应的 映射接口 的 全类名 必须保持一致 -->
+<mapper namespace="com.yc.sy.mapper.MessageMapper">
+
+	<select id="getMessage" parameterType="int" resultType="Message">
+		select * from message where mtype=#{mtype}
+	</select>
+	
+	<select id="listMessage" resultType="Message">
+		select * from message
+	</select>
+	<delete id="removeMes" parameterType="int">
+		delete from message where mid=#{mid}
+	</delete>
+	<update id="doModify" parameterType="Message">
+		update message set mappkey=#{mappkey},msecret=#{msecret},mtel=#{mtel}
+		,msignname=#{msignname},mtemplateCode=#{mtemplateCode}
+		where mid=#{mid}
+	</update>	
+	
+</mapper>

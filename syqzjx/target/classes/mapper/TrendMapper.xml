@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 与 对应的 映射接口 的 全类名 必须保持一致 -->
+<mapper namespace="com.yc.sy.mapper.TrendMapper">
+
+		<select id="getPartTrends" parameterType="int" resultType="Trends">
+        SELECT * FROM trends ORDER BY tid asc LIMIT #{start},#{end}
+      </select>
+
+	<select id="getTotalPage"  parameterType="int" 
+		resultType="int">
+			select ceil(count(1)/#{getTotalPage}) tp from trends  
+	</select>
+		
+		<select id="selectTrend"  resultType="Trends">
+				select * from trends
+		</select>
+		
+		<select id="singleNews" parameterType="int"  resultType="Trends">
+				select * from trends where tid = #{tid}
+		</select>
+		
+		<insert id="addTrend" parameterType="Trends">
+				insert into trends values(0,#{ttag},#{tcontent},SYSDATE())
+		</insert>
+
+		<delete id="remove" parameterType="int" >
+				delete from trends where tid = #{tid}
+		</delete>
+		
+		<update id="update" parameterType="Trends">
+				update trends set ttag = #{ttag},tcontent = #{tcontent},tdate = SYSDATE() where tid = #{tid}
+		</update>
+		
+</mapper>

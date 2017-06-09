@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+/*中间内容样式区*/
+article{
+	width:100%;
+	height:531px;
+	background:#fff url(../images/Job.jpg) no-repeat;
+}
+.Img{
+	position:absolute;
+}
+.tb{
+	position:absolute;
+	width:700px;
+	height:350px;
+	margin-left:230px;
+	margin-top:170px;
+}
+.tb table{
+	width:480px;
+
+}

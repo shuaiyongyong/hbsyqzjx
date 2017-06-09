@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间与映射接口的全类名一致 -->
+<mapper namespace="com.yc.sy.mapper.EmployMapper">
+	
+	<select id="selectAllEmploy"  resultType="Employ">
+		select * from employ
+	</select>
+	
+	<select id="selectEmployById"  resultType="Employ" parameterType="int">
+		select * from employ where eid=#{eid}
+	</select>
+	
+	<update id="updateJob" parameterType="Employ">
+		update employ set ename=#{ename},ecount=#{ecount},eaddress=#{eaddress},etime=#{etime},edescription=#{edescription} where eid=#{eid}
+	</update>
+	<delete id="delJob" parameterType="int">
+		delete from employ where eid=#{eid}
+	</delete>
+	
+	<insert id="insertEmploy" parameterType="Employ">
+		insert into employ values(0,#{ename},#{ecount},#{eaddress},#{etime},#{edescription})
+	</insert>
+	
+	<!-- 获取证书 -->
+		<select id="getAll" resultType="Employ">
+			select * from employ
+		</select>
+		
+		<select id="getDescription" resultType="Employ" parameterType="int">
+			select * from employ where eid=#{eid}
+		</select>
+		
+</mapper>

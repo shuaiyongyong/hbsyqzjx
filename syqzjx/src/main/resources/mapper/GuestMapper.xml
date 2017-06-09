@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.sy.mapper.GuestMapper">
+		
+		<select id="listGuest" resultType="Guest" >
+			select * from guest order by gid desc
+		</select>
+		<insert id="insertGuest" parameterType="Guest">
+			insert into guest values(0,#{gname},#{gtel},#{gemail},#{gcontent},now())
+		</insert>
+		<delete id="deleteMes" parameterType="int">
+			delete  from guest where gid=#{gid}
+		</delete>
+		<select id="getMesById" parameterType="int" resultType="Guest">
+			select * from guest where gid=#{gid}
+		</select>
+		
+</mapper>

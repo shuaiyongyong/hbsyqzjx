@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间与映射接口的全类名一致 -->
+<mapper namespace="com.yc.sy.mapper.CompanyMapper">
+	
+	<select id="selectCompInfo" resultType="Company">
+		select * from company 
+	</select>
+	
+	<update id="updateCbrife" parameterType="Company">
+		update company set cbrife=#{cbrife}
+	</update>
+	<update id="updateCbrand" parameterType="Company">
+		update company set cbrand=#{cbrand}
+	</update>
+	
+	<select id="selectProductType" resultType="ProductType">
+		select * from productType 
+	</select>
+	
+	<select id="selectKnows" resultType="Knows">
+		select * from know 
+	</select>
+	
+	
+	<!-- context操作 -->
+	<select id="selectContextByType" resultType="Context" parameterType="Context">
+		select * from Context where ctype=#{ctype}
+	</select>
+	
+	<select id="selectContextByType1" resultType="Context">
+		select * from Context where ctype in (1,2,3,4)
+	</select>
+	<select id="selectContextByType2" resultType="Context">
+		select * from Context where ctype=5
+	</select>
+	
+	<select id="selectContextById" resultType="Context" parameterType="Context">
+		select * from Context where cid=#{cid}
+	</select>
+	<update id="updateCconcrete" parameterType="Context">
+		update Context set cconcrete=#{cconcrete} where cid=#{cid}
+	</update>
+	
+	<delete id="DelZ" parameterType="int">
+		delete from Context where cid=#{cid}
+	</delete>
+	<insert id="insertZzzs" parameterType="Context">
+		insert into Context values(0,#{cconcrete},#{ctype})
+	</insert>
+	
+	
+</mapper>

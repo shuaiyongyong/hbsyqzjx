@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 与 对应的 映射接口 的 全类名 必须保持一致 -->
+<mapper namespace="com.yc.sy.mapper.KnowMapper">
+
+		<select id="getPartKnows" parameterType="int" resultType="Knows">
+        SELECT * FROM know ORDER BY kid asc LIMIT #{start},#{end}
+      </select>
+
+	<select id="getTotalPage"  parameterType="int" 
+		resultType="int">
+			select ceil(count(1)/#{getTotalPage}) tp from know  
+	</select>
+	
+		<select id="selectAllKnows"  resultType="Knows">
+				select * from know
+		</select>
+		
+		<select id="singleKnows"  parameterType="int" resultType="Knows">
+				select * from know where kid = #{kid}
+		</select>
+		
+		<insert id="addKnows" parameterType="com.yc.sy.entity.Knows">
+				insert into know values(0,#{ktag},#{kcontent},SYSDATE())
+		</insert>
+		
+		<delete id="removeKnows" parameterType="int" >
+				delete from know where kid=#{kid}
+		</delete>
+		
+		<update id="update" parameterType="com.yc.sy.entity.Knows">
+				update know set ktag = #{ktag},kcontent = #{kcontent},kdate = SYSDATE() where kid = #{kid}
+		</update>
+</mapper>

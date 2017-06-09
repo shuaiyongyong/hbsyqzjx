@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.sy.mapper.ContextMapper">
+		<!-- 获取证书 -->
+		<select id="getZs" resultType="Context">
+			select * from context where ctype in(5,6)
+		</select>
+		<select id="getAll" resultType="Context" >
+			select * from context where ctype in (1,2,3,4)
+		</select>
+		
+</mapper>

@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+/*中间内容样式区*/
+article{
+	width:100%;
+	height:850px;
+	background:#fff;
+}
+.top{
+	width:100%;
+	height:210px;
+}
+
+.produce{
+	width:450px;
+	height:200px;
+	float:left;
+	margin-left:10px;
+	background:url(../images/weline.gif) no-repeat right center;
+	overflow: auto;
+}
+
+#compInfo{
+	font-size:14px;
+	line-height:1.6em;
+}
+
+
+.hbsy{
+	font-size:16px;
+	font-weight:bold;
+	color:#0274D4;
+}
+article .produce p{
+	margin-right:16px;
+	font-size:13px;
+	line-height:1.6em;
+}
+.zzzs{
+	width:450px;
+	float:left;
+	margin-left:20px;
+}
+.z1{
+	text-align:center;
+}
+
+/*图片轮换模块*/
+.productPic{
+	width:100%;
+	height:270px;
+	background:#EAEAEA;
+	border-bottom-width:80%;
+	border-color:#F90;
+	border-bottom-style:dotted;
+}
+
+#dom{
+	width:90%;
+	height:225px;
+	float:left;
+	margin-left:5%;
+	overflow:hidden;
+}
+#dom1{
+	float:left;
+}
+
+
+#fenlei{
+	width:35%;
+	height:150px;
+	float:left;
+	border-color:#F90;
+	border-bottom-style:dotted;
+}
+.fenleiDiv{
+	width:100%;
+	height:30px;
+	background:#EAEAEA;
+}
+.fenleispan{
+	font-size:16px;
+	font-style:italic;
+	color:#F60;
+	font-weight:bold;
+}
+.moreSpan{
+	height:100%;
+	text-align:center;
+	float:right;
+	margin-right:3px;
+	line-height:30px;
+	font-style:italic;
+	font-weight:900;
+	color:#090;
+}
+
+.connection{
+	width:65%;
+	height:150px;
+	float:left;
+	background-color:#EAEAEA;
+}
+.connPic{
+	float:left;
+	margin-left:10px;
+}
+.connP{
+	width:450px;
+	height:130px;
+	margin-top:20px;
+	float:left;
+	text-align:center;
+}
+.connP table{
+	font-size:13px;
+}
+
+
+.zhishi{
+	clear:both;
+	width:100%;
+	height:215px;
+	float:left;
+}
+.zhishiSP{
+	width:80px;
+	height:20px;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	font-style:italic;
+	color:#F60;
+	float:left;
+	background-color:#EAEAEA;
+}
+.zhishiPic1{
+	width:920px;
+	height:20px;
+	float:left;
+	background:url(../images/tiao.png) repeat; 
+}
+#zhishiPic1Span{
+	height:20px;
+	float:right;
+	margin-right:10px;
+	font-size:12px;
+	font-style:italic;
+	font-weight:900;
+	color:#090;
+}
+
+.zhishiPic2{
+	width:292px;
+	height:195px;
+	float:left;
+}
+.zhishiTable{
+	width:708px;
+	height:195px;
+	float:left;
+	font-size:13px;
+}

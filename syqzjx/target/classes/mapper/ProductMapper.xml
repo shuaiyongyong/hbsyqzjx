@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间 与 对应的 映射接口 的 全类名 必须保持一致 -->
+<mapper namespace="com.yc.sy.mapper.ProductMapper">
+
+	<select id="getPartProductType" parameterType="int" resultType="ProductType">
+        SELECT * FROM productType ORDER BY ptid asc LIMIT #{start},#{end}
+      </select>
+
+	<select id="getTotalPageType"  parameterType="int" 
+		resultType="int">
+			select ceil(count(1)/#{getTotalPage}) tp from productType  
+	</select>
+
+	 <select id="getPartProduct" parameterType="int" resultType="Products">
+        SELECT * FROM product ORDER BY pid asc LIMIT #{start},#{end}
+      </select>
+
+	<select id="getTotalPage"  parameterType="int" 
+		resultType="int">
+			select ceil(count(1)/#{getTotalPage}) tp from product  
+	</select>
+	
+	<select id="getPartProducts" parameterType="int" resultType="Products">
+        SELECT * FROM product  where ptid = #{ptid} LIMIT #{start},#{end}
+      </select>
+
+	<select id="getTotalPages"  parameterType="int"  resultType="int">
+			select ceil(count(1)/#{pageSize}) tp from product  where ptid = #{ptid}
+	</select>
+	
+		<select id="selectAllType"  resultType="ProductType">
+				select * from productType
+		</select>
+		
+		<select id="selectAll"  resultType="Products">
+				select * from product
+		</select>
+		
+		
+
+	
+	<select id="selectProduct" parameterType="int" resultType="Products">
+				select * from product where ptid = #{ptid}
+	</select>
+	
+	<select id="selectPic" parameterType="int" resultType="Products">
+				select * from product where pid = #{pid}
+	</select>
+	
+	<select id="SelectTypeByName" parameterType="String" resultType="ProductType">
+				select * from productType where ptname = #{ptname}
+	</select>
+	
+	<insert id="AddProductType" parameterType="ProductType" >
+			insert into productType values(0,#{ptname})
+	</insert>
+	
+	<update id="ModifyProductType" parameterType="ProductType">
+			update productType set ptname = #{ptname} where ptid = #{ptid}
+	</update>
+	
+	<select id="selectTypeByPtid" parameterType="int" resultType="ProductType">
+				select * from productType where ptid = #{ptid}
+	</select>
+	
+	<insert id="AddProduct" parameterType="Products" >
+			insert into product values(0,#{pname},#{pbrife},#{ppic},#{ptid})
+	</insert>
+	
+	<select id="SelectProductByName" parameterType="String" resultType="Products">
+				select * from product where pname = #{pname}
+	</select>
+	
+	<update id="ModifyProduct" parameterType="Products">
+			update product set pname = #{pname},pbrife = #{pbrife},ppic = #{ppic},ptid = #{ptid} where pid = #{pid}
+	</update>
+</mapper>
